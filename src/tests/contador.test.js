@@ -48,6 +48,23 @@ test('Traer button',() => {
     expect(contando).toBe('11')
   
   })
+  //Prueba boton resta: se le pasa 10 se simula clic y debe devolver 9
+  test('Simular click boton resta',() => {
+    const wrapper = shallow(<Contador propNum={10} />)
+    const btn2 = wrapper.find('button').at(1).simulate('click')
+    const contando = wrapper.find('h2').text().trim()
+    expect(contando).toBe('9')
+  
+  })
+
+  //Prueba boton reset:se le pasa 10 se simula clic y debe devolver 10 
+  test('Simular click boton reset',() => {
+    const wrapper = shallow(<Contador propNum={10} />)
+    const btn3 = wrapper.find('button').at(2).simulate('click')
+    const contando = wrapper.find('h2').text().trim()
+    expect(contando).toBe('10')
+  
+  })
   
   
 
